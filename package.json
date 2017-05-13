@@ -1,0 +1,28 @@
+{
+  "name": "nblox-contact",
+  "version": "0.0.0",
+  "description": "TODO description...",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nblox/nblox-contact.git"
+  },
+  "keywords": [
+    "TODO"
+  ],
+  "author": "Pedro H. <pedro@digitalrounin.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nblox/nblox-contact/issues"
+  },
+  "homepage": "https://github.com/nblox/nblox-contact#readme",
+  "dependencies": {
+    "serverless-wsgi": "^1.1.1"
+  }
+}

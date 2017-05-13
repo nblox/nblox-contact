@@ -1,0 +1,46 @@
+# For more information on this configuration file:
+#
+#   - https://serverless.com/framework/docs/
+#   - https://serverless.com/framework/docs/providers/aws/guide/
+#
+service: nblox-contact
+
+provider:
+  name: aws
+  # runtime: python3.6
+  runtime: python2.7
+  stage: dev
+  region: us-west-2
+  memorySize: 128
+
+package:
+  exclude:
+    - '**'
+    - '**/*~'
+    - '**/.*.swp'
+    - '**/.gitignore'
+  include:
+    - .requirements/**
+    - .wsgi_app
+    - LICENSE
+    - nxcontact/**
+    - static/**
+    - templates/**
+    - wsgi.py
+
+
+functions:
+  nxcontact:
+    handler: wsgi.handler
+    events:
+      - http: ANY {proxy+}
+
+#------------------------------------------------------------------------------
+# Plugins
+#------------------------------------------------------------------------------
+plugins:
+  - serverless-wsgi
+
+custom:
+  wsgi:
+    app: nxcontact.APP
